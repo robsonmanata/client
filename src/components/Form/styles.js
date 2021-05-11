@@ -8,18 +8,32 @@ export default makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
+    marginTop:'30%',
+    position: 'relative',
+    zIndex:'4',
+  },
+  input: {
+    // border: '1px solid #c5a880',
+    borderRadius:'5px',
   },
   form: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
   },
+  
   fileInput: {
     width: '97%',
     margin: '10px 0',
   },
   buttonSubmit: {
     marginBottom: 10,
-    backgroundColor: '#a4ebf3'
+    backgroundColor: 'black',
+    color: 'white',
+
+  },
+  buttonclear:{
+    backgroundColor: '#c5a880',
+    color: 'white',
   },
 }));
