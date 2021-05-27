@@ -6,7 +6,7 @@ import FileBase from 'react-file-base64';
 import { createPost, updatePost } from '../../actions/posts';
 import useStyles from './styles';
 
-const Form = ({ currentId, setCurrentId }) => {
+const Form = ({ currentId, setCurrentId,setFormVisibility }) => {
   console.log(currentId)
   const [postData, setPostData] = useState({ title: '', message: '', tags: '', selectedFile: '',profilepic:'' });
   const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
@@ -30,9 +30,11 @@ const Form = ({ currentId, setCurrentId }) => {
     if (currentId === 0) {
       dispatch(createPost({ ...postData, name: user?.result?.name,profilepic:user?.result.profilepic}));
       clear();
+      setFormVisibility(false)
     } else {
       dispatch(updatePost(currentId, { ...postData, name: user?.result?.name,profilepic:user?.result.profilepic}));
       clear();
+      setFormVisibility(false)
     }
   };
 
@@ -40,7 +42,7 @@ const Form = ({ currentId, setCurrentId }) => {
     return (
       <Paper className={classes.paper}>
         <Typography variant="h6" align="center">
-          Please Sign In to create your own memories and like other's memories.
+          Please Sign In to create your own posts, comment and like other's posts.
         </Typography>
       </Paper>
     );
@@ -62,3 +64,4 @@ const Form = ({ currentId, setCurrentId }) => {
 };
 
 export default Form;
+

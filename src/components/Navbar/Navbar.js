@@ -21,11 +21,16 @@ const Navbar = ({setFormVisibility}) => {
   const upload = () => {
     setFormVisibility((prevformVisibility) => !prevformVisibility);
   };
-  
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
 
   const logout = () => {
     dispatch({ type: actionType.LOGOUT });
-
+    setFormVisibility(true);
     history.push('/');
 
     setUser(null);
@@ -54,7 +59,7 @@ const Navbar = ({setFormVisibility}) => {
           <div className={classes.profile}>
             <Avatar className={classes.purple} alt={user?.result.name} src={user?.result.imageUrl || user?.result.profilepic }>{user?.result.name.charAt(0)}</Avatar>
             <Typography className={classes.userName} variant="h6">{user?.result.name}</Typography>
-            <Button className={classes.upload} onClick={upload}>
+            <Button className={classes.upload} onClick={() =>{upload();scrollToTop()}}>
             <AddBoxOutlinedIcon fontSize="default" />
             </Button>
             <Button variant="contained" className={classes.logout} color="dark" onClick={logout}>Logout</Button>

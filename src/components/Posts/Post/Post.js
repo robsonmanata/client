@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography,Avatar } from '@material-ui/core/';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
-import DeleteIcon from '@material-ui/icons/Delete';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+// import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
 import { useDispatch, useSelector} from 'react-redux';
@@ -18,7 +19,6 @@ const Post = ({ post, setCurrentId, setFormVisibility }) => {
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem('profile'));
   const posts = useSelector((state) => state.posts);
-  console.log(post)
   const upload = () => {
     setFormVisibility((prevformVisibility) => !prevformVisibility);
   };
@@ -86,7 +86,7 @@ const Post = ({ post, setCurrentId, setFormVisibility }) => {
         </Button>
         {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator)  && (
         <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>
-          <DeleteIcon fontSize="small" /> Delete
+          <HighlightOffIcon fontSize="small" color="action" /> 
         </Button>
         )}
       </CardActions>

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
+import { Avatar, Button, Paper, Grid, Typography, Container} from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import FileBase from 'react-file-base64';
-
+import phone from '../../images/phone.png';
+import ipad from '../../images/ipad.png';
 import Icon from './icon';
 import { signin, signup } from '../../actions/auth';
 import { AUTH } from '../../constants/actionTypes';
@@ -14,7 +15,7 @@ import Input from './Input';
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '',profilepic:'' };
 
-const SignUp = () => {
+const SignUp = ({setFormVisibility}) => {
   const [form, setForm] = useState(initialState);
   const [isSignup, setIsSignup] = useState(false);
   const dispatch = useDispatch();
@@ -35,8 +36,10 @@ const SignUp = () => {
     e.preventDefault();
 
     if (isSignup) {
+      setFormVisibility(false);
       dispatch(signup(form, history));
     } else {
+      setFormVisibility(false);
       dispatch(signin(form, history));
     }
   };
@@ -47,7 +50,7 @@ const SignUp = () => {
 
     try {
       dispatch({ type: AUTH, data: { result, token } });
-
+      setFormVisibility(false);
       history.push('/');
     } catch (error) {
       console.log(error);
@@ -59,7 +62,13 @@ const SignUp = () => {
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   return (
+    <>
+    
     <Container className={classes.contain} component="main" maxWidth="xs">
+    <div className={classes.devices}>
+    <img className={classes.ipadimg} alt='phone' src={ipad}></img>
+    <img className={classes.phoneimg} alt='phone' src={phone}></img>
+    </div>
       <Paper className={classes.paper} elevation={3}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
@@ -104,6 +113,7 @@ const SignUp = () => {
         </form>
       </Paper>
     </Container>
+    </>
   );
 };
 

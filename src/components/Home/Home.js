@@ -25,7 +25,7 @@ const Home = ({formVisibility, setFormVisibility}) => {
               { formVisibility && (
             <>
               <Grid item xs={12} sm={4}>
-                <Form currentId={currentId} setCurrentId={setCurrentId}  />
+                <Form currentId={currentId} setCurrentId={setCurrentId}  setFormVisibility={setFormVisibility}/>
               </Grid>
             </>
             )}

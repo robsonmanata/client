@@ -4,6 +4,7 @@ export default makeStyles((theme) => ({
   paper: {
     position: 'relative',
     top: '100px',
+    left:'150px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -13,6 +14,35 @@ export default makeStyles((theme) => ({
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
     },
+  },
+  paper1: {
+    width: '300px',
+    height: '440px',
+    position: 'absolute',
+    top: '18%',
+    left: '10%',
+  },
+  phoneimg: {
+    height: '90%',
+    width: '40%',
+    position: 'absolute',
+    marginLeft: '0',
+    left: '0',
+  },
+  ipad: {
+    height: '50%',
+    width: '70%',
+    position: 'absolute',
+    marginLeft: '0',
+    zIndex:'-1',
+  },
+  devices:{
+    width:'600px',
+    height:'500px',
+    position:'absolute',
+    left:'150px',
+    top:'110px'
+
   },
   avatar: {
     margin: theme.spacing(1),

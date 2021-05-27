@@ -7,7 +7,7 @@ import Auth from './components/Auth/Auth';
 
 
 const App = () => {
-  const [formVisibility, setFormVisibility] = useState(false);
+  const [formVisibility, setFormVisibility] = useState(true);
   
   return (
     <BrowserRouter>
@@ -15,7 +15,7 @@ const App = () => {
       <Navbar setFormVisibility={setFormVisibility}/>
       <Switch>
       <Route exact path='/' render={() => <Home formVisibility={formVisibility} setFormVisibility={setFormVisibility} />}/>
-        <Route path="/auth" exact component={Auth} />
+        <Route exact path="/auth" render={() => <Auth  setFormVisibility={setFormVisibility} />} />
       </Switch>
     </Container>
   </BrowserRouter>

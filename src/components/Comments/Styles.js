@@ -8,8 +8,6 @@ export default makeStyles((theme) => ({
       overflow: 'hidden',
       padding: theme.spacing(0, 3, 0, 0),
       
-    
-      
     },
     sendComment: {
         padding:'3px',
