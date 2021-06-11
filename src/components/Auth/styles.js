@@ -4,7 +4,7 @@ export default makeStyles((theme) => ({
   paper: {
     position: 'relative',
     top: '100px',
-    left:'150px',
+    // left:'150px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

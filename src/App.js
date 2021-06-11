@@ -15,7 +15,7 @@ const App = () => {
       <Navbar setFormVisibility={setFormVisibility}/>
       <Switch>
       <Route exact path='/' render={() => <Home formVisibility={formVisibility} setFormVisibility={setFormVisibility} />}/>
-        <Route exact path="/auth" render={() => <Auth  setFormVisibility={setFormVisibility} />} />
+      <Route exact path="/auth" render={() => <Auth  setFormVisibility={setFormVisibility} />} />
       </Switch>
     </Container>
   </BrowserRouter>
