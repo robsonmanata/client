@@ -61,5 +61,10 @@ export default makeStyles((theme) => ({
   contain:{
     marginTop:'0',
   },
+  "@media (max-width: 700px)": {
+    devices: {
+      display:"none",
+    },
+  }
   
 }));

@@ -62,7 +62,7 @@ const Navbar = ({setFormVisibility}) => {
             <Button className={classes.upload} onClick={() =>{upload();scrollToTop()}}>
             <AddBoxOutlinedIcon fontSize="default" />
             </Button>
-            <Button variant="contained" className={classes.logout} color="dark" onClick={logout}>Logout</Button>
+            <Button variant="contained" className={classes.logout}  onClick={logout}>Logout</Button>
           </div>
         ) : (
           <Button className={classes.logout} component={Link} to="/auth" variant="contained" >Sign In</Button>

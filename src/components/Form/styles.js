@@ -8,8 +8,10 @@ export default makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    marginTop:'30%',
-    position: 'relative',
+    marginTop:'7%',
+    position: 'fixed',
+    top:"0",
+    marginRight:"10px",
     zIndex:'4',
   },
   input: {
@@ -35,5 +37,10 @@ export default makeStyles((theme) => ({
   buttonclear:{
     backgroundColor: '#c5a880',
     color: 'white',
+  },
+  "@media (max-width: 700px)": {
+    paper: {
+      marginTop:'22%',
+    },
   },
 }));

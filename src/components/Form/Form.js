@@ -7,7 +7,7 @@ import { createPost, updatePost } from '../../actions/posts';
 import useStyles from './styles';
 
 const Form = ({ currentId, setCurrentId,setFormVisibility }) => {
-  console.log(currentId)
+  
   const [postData, setPostData] = useState({ title: '', message: '', tags: '', selectedFile: '',profilepic:'' });
   const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
   const dispatch = useDispatch();

@@ -65,10 +65,10 @@ const SignUp = ({setFormVisibility}) => {
     <>
     
     <Container className={classes.contain} component="main" maxWidth="xs">
-    {/* <div className={classes.devices}>
+    <div className={classes.devices}>
     <img className={classes.ipadimg} alt='phone' src={ipad}></img>
     <img className={classes.phoneimg} alt='phone' src={phone}></img>
-    </div> */}
+    </div>
       <Paper className={classes.paper} elevation={3}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />

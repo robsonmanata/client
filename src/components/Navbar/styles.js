@@ -14,6 +14,7 @@ export default makeStyles((theme) => ({
     position:'fixed',
     
     
+    
   },
   heading: {
     
@@ -21,6 +22,7 @@ export default makeStyles((theme) => ({
     fontFamily:'Pacifico',
     fontSize:'30px',
     color: '#c5a880',
+    
   },
   image: {
     marginLeft: '15px',
@@ -28,7 +30,7 @@ export default makeStyles((theme) => ({
   toolbar: {
     display: 'flex',
     justifyContent: 'flex-end',
-    width: '400px',
+    // width: '400px',
   },
   profile: {
     display: 'flex',
@@ -51,4 +53,37 @@ export default makeStyles((theme) => ({
 backgroundColor:'black',
 color:'white',
   },
+  "@media (max-width: 700px)": {
+    heading: {
+      color: "black",
+      fontSize:'15px',
+      zIndex:"1",
+
+    },
+    userName: {
+      fontSize:'10px',
+    },
+    profile: {
+      width: '220px',
+    },
+    logout: {
+      fontSize:'10px',
+      padding: '6px 0 6px 0',
+        },
+    upload: {
+      minWidth: '30px'
+    },
+    appBar: {
+      padding: '10px 10px', 
+      width: '300px',
+    },
+    image: {
+      marginLeft: '0px',
+      width: '30px',
+      height: '30px',
+    },
+    toolbar: {
+paddingLeft: '0px',
+    },
+  }
 }));
