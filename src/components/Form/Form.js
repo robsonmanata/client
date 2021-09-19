@@ -35,6 +35,7 @@ const Form = ({ currentId, setCurrentId,setFormVisibility }) => {
       dispatch(updatePost(currentId, { ...postData, name: user?.result?.name,profilepic:user?.result.profilepic}));
       clear();
       setFormVisibility(false)
+      alert("working")
     }
   };
 

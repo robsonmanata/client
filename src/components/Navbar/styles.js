@@ -21,7 +21,7 @@ export default makeStyles((theme) => ({
     textDecoration: 'none',
     fontFamily:'Pacifico',
     fontSize:'30px',
-    color: '#c5a880',
+    color: 'red',
     
   },
   image: {
